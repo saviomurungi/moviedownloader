@@ -1,11 +1,15 @@
 
 import os
-import sys
 import requests
-from downloadTorrent import downloadMovie
 
+newpath = r'./movies' 
+if not os.path.exists(newpath):
+    os.makedirs(newpath)
 
-
+newpath = r'./tfiles' 
+if not os.path.exists(newpath):
+    os.makedirs(newpath)
+    
 def fetchLatestMovies ( ):
     #fetch movies from ther server
     api_url = "https://yts.mx/api/v2/list_movies.json?limit=50"
